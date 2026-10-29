@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Extract project
-        run: unzip -q Pagefeed.zip
+        run: unzip -q Pagefeed_fixed.zip
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
