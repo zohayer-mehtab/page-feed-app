@@ -86,13 +86,30 @@ class ReaderSettings(private val sp: SharedPreferences) {
     var mode by mutableStateOf(enumOr(sp.getString("mode", null), ReadMode.Feed))
         private set
 
+    @JvmName("setFontExplicit")
     fun setFont(v: ReaderFont) { font = v; sp.edit().putString("font", v.name).apply() }
+    
+    @JvmName("setTextPctExplicit")
     fun setTextPct(v: Int) { textPct = v.coerceIn(60, 200); sp.edit().putInt("textPct", textPct).apply() }
+    
+    @JvmName("setSpacingPctExplicit")
     fun setSpacingPct(v: Int) { spacingPct = v.coerceIn(80, 200); sp.edit().putInt("spacingPct", spacingPct).apply() }
+    
+    @JvmName("setAlignExplicit")
     fun setAlign(v: ReaderAlign) { align = v; sp.edit().putString("align", v.name).apply() }
+    
+    @JvmName("setThemeExplicit")
     fun setTheme(v: ReaderTheme) { theme = v; sp.edit().putString("theme", v.name).apply() }
+    
+    @JvmName("setBrightnessOnExplicit")
     fun setBrightnessOn(v: Boolean) { brightnessOn = v; sp.edit().putBoolean("brightnessOn", v).apply() }
+    
+    @JvmName("setBrightnessExplicit")
     fun setBrightness(v: Float) { brightness = v.coerceIn(0.02f, 1f); sp.edit().putFloat("brightness", brightness).apply() }
+    
+    @JvmName("setNightLightExplicit")
     fun setNightLight(v: Boolean) { nightLight = v; sp.edit().putBoolean("nightLight", v).apply() }
+    
+    @JvmName("setModeExplicit")
     fun setMode(v: ReadMode) { mode = v; sp.edit().putString("mode", v.name).apply() }
 }
